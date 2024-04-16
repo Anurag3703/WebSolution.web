@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(142, 122, 181);
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease;
+        }
+        header {
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            position: relative; /* Position relative for the absolute positioning of the "Web Solutions" text */
+        }
+        .web-solutions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: 	"Lucida Console", "Courier New", monospace; /* Different font */
+            font-size: 18px; /* Different font size */
+            color: #0c0b0b; /* White color */
+            font-weight: bolder;
+        }
+        nav {
+            background-color: rgb(183, 132, 183);
+            padding: 10px 0;
+            text-align: center;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px; /* Reduced max-width for better center alignment */
+            margin: 0 auto;
+            background-color: rgb(228, 147, 179); /* Semi-transparent white background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        footer {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 0px 0px; /* Decreased padding */
+            width: 100%;
+            z-index: 300;
+            font-size: larger;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Add rounded corners */
+            position: relative; /* Position relative for text overlay */
+        }
+        .img-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Increase icon size */
+        footer a i {
+            font-size: 50px; /* Adjust the size as needed */
+        }
+
+        /* Styling for headings and paragraphs */
+        .container h2 {
+            font-size: 36px; /* Larger font size for the heading */
+            margin-bottom: 20px; /* Increased margin for better spacing */
+            color: #0b0a0a; /* Darker text color */
+            animation: fadeInUp 1s ease forwards;
+        }
+        .container p {
+            font-size: 18px; /* Increased font size for better readability */
+            line-height: 1.6; /* Increased line height for better spacing */
+            color: #120e0e; /* Slightly darker text color */
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Style for hobby items */
+        #hobbies .container {
+            text-align: center; /* Center align the content */
+        }
+
+        #hobbies .hobby-item {
+            display: inline-block; /* Display items in one column */
+            margin: 10px; /* Add margin around each item */
+            vertical-align: top; /* Align items to the top */
+            animation: fadeInUp 1s ease forwards;
+            width: calc(33.33% - 20px); /* Set width to 33.33% of the container width minus margin */
+            max-width: none; /* Remove max-width */
+            flex-basis: auto; /* Adjusted flex-basis */
+        }
+
+        #hobbies .hobby-card {
+            background-color:rgb(255, 205, 234);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            height: 100%; /* Ensure all cards have the same height */
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #hobbies .hobby-card:hover {
+            transform: translateY(-5px);
+        }
+
+        #hobbies .hobby-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            font-family: "Courier New", Courier, monospace;
+            color: #141008;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        header p {
+            font-family: "Courier New", Courier, monospace;
+            color: #c7dbe0;
+            font-size: 18px;
+        }
+        
+        header h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #678293;
+            font-size: 24px;
+            font-weight: bold;
+            font-size: small;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Gallery card format and elevation animation */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-bottom: 10px; /* Decreased padding */
+            padding-top: 10px;
+        }
+
+        .card {
+            width: calc(25% - 20px); /* Set width to 25% of the container width minus margin */
+            max-width: none; /* Remove max-width */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative; /* Position relative for text overlay */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%; /* Make sure the images fill their container */
+            height: 100%; /* Make sure the images fill their container */
+            object-fit: cover; /* Maintain aspect ratio while covering the container */
+        }
+
+        /* Typing animation */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 27%;
+            }
+        }
+
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #fff; /* Cursor effect */
+            animation: typing 5s steps(40, end) infinite ; /* Adjust duration and steps as needed */
+        }
+
+        /* New styles for the About Me section */
+        #about-me {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left; /* Align text to the left */
+            padding: 20px;
+        }
+
+        .about-me-content {
+            max-width: 50%; /* Set maximum width for the content */
+            margin-left: 20px; /* Add margin between the photo and text */
+        }
+
+        .about-me-photo {
+            max-width: 40%; /* Set maximum width for the photo */
+    margin-right: 20px; /* Add margin to separate photo from text */
+    margin-top: 125px; /* Add margin to align the top of the photo with the paragraph */
+    float: right; /* Float the photo to the right */
+            
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <h1>Anurag Tiwari</h1>
+        <p class="typing-text" style="display: none;">Computer Science Engineering</p>
+        <div class="web-solutions">Web Solutions</div>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#hobbies"> Hobbies</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact Me</a></li> <!-- Added Contact Me link -->
+    </ul>
+</nav>
+
+<section id="about-me">
+    <div class="container">
+        <div class="about-me-photo">
+            <img src="photo.jpg" alt="Anurag Tiwari">
+        </div>
+        <div class="about-me-content">
+            <h2>About me</h2>
+            <p><i>I am Anurag Tiwari. I'm from India, and I'm currently studying Computer Science Engineering at the University of Debrecen. My journey in the field of technology started at a young age, and since then, I've been passionate about exploring the endless possibilities it offers. From developing simple applications to tackling complex problems, I enjoy every aspect of programming and software development</i>.</p>
+            <p><i>Outside of academics, I have a keen interest in reading books and exploring different genres. I believe that books have the power to broaden our horizons and provide valuable insights into various aspects of life. Additionally, I am an avid music enthusiast, and I find solace in listening to instrumental music while delving into coding challenges</i>.</p>
+            
+        </div>
+    </div>
+</section>
+
+<section id="hobbies">
+    <div class="container">
+        <h2 style="text-align: center;">About My Hobbies</h2> <!-- Center align the heading -->
+       
+        <div class="hobby-item">
+            <div class="hobby-card">
+                <img src="programming.jpg" alt="Programming">
+                <div class="hobby-info">
+                    <h2>Programming</h2>
+                    <p>I enjoy programming because it allows me to bring my ideas to life and solve real-world problems.</p>
+                </div>
+            </div>
+        </div>
+        <div class="hobby-item">
+            <div class="hobby-card">
+                <img src="davinci.png" alt="Books">
+                <div class="hobby-info">
+                    <h2>Reading Books</h2>
+                    <p>Reading books is one of my favorite hobbies as it helps me explore new worlds and gain valuable insights.</p>
+                </div>
+            </div>
+        </div>
+        <div class="hobby-item">
+            <div class="hobby-card">
+                <img src="instuemental2.png" alt="Instrumental Music">
+                <div class="hobby-info">
+                    <h2>Listening to Instrumental Music</h2>
+                    <p>Instrumental music helps me relax and focus, especially when I'm engrossed in coding challenges.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <div class="card">
+                <img src="instuemental1.png" alt="Anurag">
+                <div class="img-overlay">Painting</div>
+            </div>
+            <div class="card">
+                <img src="instuemental2.png" alt="Picture 2">
+                <div class="img-overlay">Piano</div>
+            </div>
+            <div class="card">
+                <img src="background.png" alt="Picture 3">
+                <div class="img-overlay">Nebular</div>
+            </div>
+            <div class="card">
+                <img src="uni.png" alt="Picture 4">
+                <div class="img-overlay">Universe</div>
+            </div>
+            <div class="card">
+                <img src="concert.png" alt="Picture 4">
+                <div class="img-overlay">Concert</div>
+            </div>
+            <div class="card">
+                <img src="MUMBAI1.PNG" alt="Picture 4">
+                <div class="img-overlay">Mumbai</div>
+            </div>
+            <div class="card">
+                <img src="croun.png" alt="Picture 4">
+                <div class="img-overlay">Crown's Jewel</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+<footer>
+    <div class="container"> <!-- Removed background-color property -->
+        <h4 style="font-size: 16px;">Contact Me</h4> <!-- Decreased font size -->
+        <a href="https://www.instagram.com/its_just_anurag?igsh=MWQzbWZwOXN3Y3QzNA=="><i class="fab fa-instagram"></i></a> | 
+        <a href="https://www.linkedin.com/in/anurag-tiwari-952721260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+
+
+<script>
+    // Trigger typing animation when the page loads
+    document.addEventListener("DOMContentLoaded", function () {
+        var typingText = document.querySelector(".typing-text");
+
+        setTimeout(function () {
+            typingText.style.display = "inline-block";
+        }, 1000); // Delay the animation start for 1 second
+    });
+</script>
+
+</body>
+</html>
