@@ -195,14 +195,14 @@
                 width: 0;
             }
             to {
-                width: 27%;
+                width: 22%;
             }
         }
         .typing-text {
             overflow: hidden;
             white-space: nowrap;
             border-right: 2px solid #fff;
-            animation: typing 5s steps(40, end) infinite;
+            animation: typing 5s steps(1000, end) infinite;
         }
         #about-me {
             display: flex;
@@ -221,45 +221,8 @@
             margin-top: 145px;
             float: right;
         }
-        @media only screen and (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            .about-me-photo, .about-me-content {
-                max-width: 100%;
-                margin: 0;
-                float: none;
-            }
-            .gallery-container {
-                gap: 10px;
-            }
-            .card {
-                width: calc(50% - 10px);
-            }
-        }
-        @media only screen and (max-width: 480px) {
-            header h1 {
-                font-size: 24px;
-            }
-            header p {
-                font-size: 16px;
-            }
-            header h2 {
-                font-size: 18px;
-            }
-            .container h2 {
-                font-size: 24px;
-            }
-            .container p {
-                font-size: 16px;
-            }
-            .hobby-item {
-                width: calc(100% - 20px);
-            }
-            .card {
-                width: calc(100% - 20px);
-            }
-        }
+        
+        
     </style>
 </head>
 <body>
@@ -277,7 +240,7 @@
         <li><a href="#about-me">About Me</a></li>
         <li><a href="#hobbies"> Hobbies</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact Me</a></li> <!-- Added Contact Me link -->
+        <li><a href="#contact">Contact Me</a></li> 
     </ul>
 </nav>
 
@@ -367,8 +330,8 @@
 
 <section id="contact">
 <footer>
-    <div class="container"> <!-- Removed background-color property -->
-        <h4 style="font-size: 16px;">Contact Me</h4> <!-- Decreased font size -->
+    <div class="container"> 
+        <h4 style="font-size: 16px;">Contact Me</h4> 
         <a href="https://www.instagram.com/its_just_anurag?igsh=MWQzbWZwOXN3Y3QzNA=="><i class="fab fa-instagram"></i></a> | 
         <a href="https://www.linkedin.com/in/anurag-tiwari-952721260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin"></i></a>
     </div>
@@ -376,13 +339,13 @@
 
 
 <script>
-    // Trigger typing animation when the page loads
+    
     document.addEventListener("DOMContentLoaded", function () {
         var typingText = document.querySelector(".typing-text");
 
         setTimeout(function () {
             typingText.style.display = "inline-block";
-        }, 1000); // Delay the animation start for 1 second
+        }, 1000); 
     });
 </script>
 
